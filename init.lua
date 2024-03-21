@@ -8,6 +8,9 @@ vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>w', ':w<cr>', {})
 vim.keymap.set('n', '<leader>q', ':bd<cr>', {})
 
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
+  --
 -- Better Navigation though buffers
 vim.keymap.set("n", "<C-h>", "<C-w>h", {})
 vim.keymap.set("n", "<C-j>", "<C-w>j", {})
