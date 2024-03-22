@@ -22,7 +22,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-      --vim.cmd.colorscheme("bluloco")
+      --vim.cmd.colorscheme("sonokai")
 		end,
 	},
 	{
@@ -31,7 +31,23 @@ return {
 		name = "kanagawa",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme "kanagawa"
+			--vim.cmd.colorscheme "kanagawa"
 		end,
 	},
+{
+		"shaunsingh/nord.nvim",
+		name = "nord",
+		priority = 1000,
+		config = function()
+			--vim.cmd.colorscheme "nord"
+		end,
+	},
+{
+		"ribru17/bamboo.nvim",
+		name = "bamboo",
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme "bamboo"
+		end,
+	}
 }

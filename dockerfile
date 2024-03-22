@@ -5,6 +5,10 @@ RUN echo 'APT::Install-Recommends "0";' >> /etc/apt/apt.conf.d/00-docker
 RUN DEBIAN_FRONTEND=noninteractive \
   apt-get update \
   && apt-get install -y python3 \
+  curl \
+  sudo \
+  su-exec\
+
 RUN useradd -ms /bin/bash vimuser
 RUN apt-get install nvim
 USER vimuser
