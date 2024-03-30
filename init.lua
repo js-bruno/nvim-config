@@ -5,9 +5,13 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard=unnamedplus")
 
 vim.g.mapleader = " "
-vim.keymap.set('n', '<leader>w', ':w<cr>', {})
-vim.keymap.set('n', '<leader>q', ':bd<cr>', {})
+vim.keymap.set("i", "jk", "<ESC>", {})
 
+vim.keymap.set("n", "<leader>w", ":w<cr>", {})
+vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
+
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- Better Navigation though buffers
 vim.keymap.set("n", "<C-h>", "<C-w>h", {})
 vim.keymap.set("n", "<C-j>", "<C-w>j", {})
@@ -22,14 +26,14 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 
 vim.opt.rtp:prepend(lazypath)
