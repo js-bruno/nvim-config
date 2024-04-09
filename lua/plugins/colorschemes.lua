@@ -34,7 +34,7 @@ return {
 			--vim.cmd.colorscheme "kanagawa"
 		end,
 	},
-{
+	{
 		"shaunsingh/nord.nvim",
 		name = "nord",
 		priority = 1000,
@@ -42,15 +42,17 @@ return {
 			--vim.cmd.colorscheme "nord"
 		end,
 	},
-<<<<<<< Updated upstream
 {
+	{
 		"ribru17/bamboo.nvim",
-		name = "bamboo",
+		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme "bamboo"
+		-- 	require("bamboo").setup({
+		-- 		-- optional configuration here
+		-- 	})
+		-- 	require("bamboo").load()
 		end,
 	}
-=======
->>>>>>> Stashed changes
+	},
 }
