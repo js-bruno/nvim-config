@@ -1,3 +1,0 @@
-return {
-  "beauwilliams/statusline.lua",
-}
