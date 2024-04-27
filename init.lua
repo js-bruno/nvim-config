@@ -10,8 +10,12 @@ vim.keymap.set("i", "jk", "<ESC>", {})
 vim.keymap.set("n", "<leader>w", ":w<cr>", {})
 vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
 
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts)
-vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", {})
+vim.keymap.set("n", "<leader>Tab", ":tabNext<CR>", {})
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", {})
+
+vim.keymap.set("n", "<leader>v", ":vsplit<cr>", {})
+
 -- Better Navigation though buffers
 vim.keymap.set("n", "<C-h>", "<C-w>h", {})
 vim.keymap.set("n", "<C-j>", "<C-w>j", {})
@@ -35,6 +39,9 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
+
+-- Python
+vim.keymap.set("n", "<leader>b", "iimport pdb; pdb.set_trace()<esc>", {})
 
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true

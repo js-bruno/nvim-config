@@ -22,7 +22,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-      --vim.cmd.colorscheme("sonokai")
+			vim.cmd.colorscheme("sonokai")
 		end,
 	},
 	{
@@ -42,6 +42,7 @@ return {
 			--vim.cmd.colorscheme "nord"
 		end,
 	},
+<<<<<<< Updated upstream
 {
 		"ribru17/bamboo.nvim",
 		name = "bamboo",
@@ -50,4 +51,6 @@ return {
 			vim.cmd.colorscheme "bamboo"
 		end,
 	}
+=======
+>>>>>>> Stashed changes
 }

@@ -4,7 +4,7 @@ return {
 		tag = "0.1.5",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			vim.keymap.set("n", "<leader>f", ":Telescope find_files<cr>", {})
+			vim.keymap.set("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", {})
 			vim.keymap.set("n", "<c-t>", ":Telescope live_grep<cr>", {})
 		end,
 	},
@@ -13,6 +13,7 @@ return {
 		config = function()
 			require("telescope").setup({
 				extensions = {
+          hidden = true,
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({}),
 					},
