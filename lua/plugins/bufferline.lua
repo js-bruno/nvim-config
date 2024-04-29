@@ -3,6 +3,8 @@ return {
   version = "*", 
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function ()
+    vim.keymap.set("n", "<leader>be", ":BufferLinePick<CR>", {})
+    -- :BufferLinePickClose<CR>
     require("bufferline").setup{
       options = {
         mode = "buffers",

@@ -17,10 +17,15 @@ vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", {})
 vim.keymap.set("n", "<leader>v", ":vsplit<cr>", {})
 
 -- Better Navigation though buffers
-vim.keymap.set("n", "<C-h>", "<C-w>h", {})
-vim.keymap.set("n", "<C-j>", "<C-w>j", {})
-vim.keymap.set("n", "<C-k>", "<C-w>k", {})
-vim.keymap.set("n", "<C-l>", "<C-w>l", {})
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", {})
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", {})
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", {})
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", {})
+
+vim.keymap.set("n", "<C-h>", ":windcmd h<CR>", {})
+vim.keymap.set("n", "<C-j>", ":windcmd j<CR>", {})
+vim.keymap.set("n", "<C-k>", ":windcmd k<CR>", {})
+vim.keymap.set("n", "<C-l>", ":windcmd l<CR>", {})
 
 -- Rezise window with arrows
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", {})
@@ -82,6 +87,7 @@ vim.opt.rnu = true
 vim.opt.showtabline = 1
 vim.opt.smartcase = true
 vim.opt.smartindent = true
+vim.opt.autoindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.sidescrolloff = 8
