@@ -5,17 +5,22 @@ return {
   config = function ()
     vim.keymap.set("n", "<leader>be", ":BufferLinePick<CR>", {})
     -- :BufferLinePickClose<CR>
-    require("bufferline").setup{
+    local bufferline = require("bufferline")
+    bufferline.setup{
       options = {
         mode = "buffers",
-        style_preset = require("bufferline").style_preset.minimal,
+        style_preset  = {
+            bufferline.style_preset.no_italic,
+            bufferline.style_preset.no_bold
+        },
         themable = true,
         indicator = {
+            icon = '▎', -- this should be omitted if indicator style is not 'icon'
             style = 'underline',
         },
-        separator_style = "slant" ,
+        separator_style = "thick" ,
         show_tab_indicators = true,
-        show_buffer_close_icons = false,
+        show_buffer_close_icons = true,
         show_close_icon = false,
         always_show_bufferline =false,
       }
