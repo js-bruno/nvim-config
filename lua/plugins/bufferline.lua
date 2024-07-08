@@ -1,6 +1,6 @@
-return { 
+return {
   "akinsho/bufferline.nvim", 
-  version = "*", 
+  version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function ()
     vim.keymap.set("n", "<leader>be", ":BufferLinePick<CR>", {})
@@ -16,7 +16,7 @@ return {
         themable = true,
         indicator = {
             icon = '▎', -- this should be omitted if indicator style is not 'icon'
-            style = 'underline',
+            style = 'icon',
         },
         separator_style = "thick" ,
         show_tab_indicators = true,
