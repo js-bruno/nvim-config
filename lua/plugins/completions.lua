@@ -57,9 +57,13 @@ return {
           end,
         },
         window = {
-          completion = cmp.config.window.bordered(),
+          completion = cmp.config.window.bordered({
+            border = "double",
+            -- winhighlight="Normal:Pmenu,FloatBorder:PMenu,Cursorline:PmenuThumb,Search:None"
+          }),
           documentation = cmp.config.window.bordered(),
         },
+
         mapping = cmp.mapping.preset.insert({
           ["<C-k>"] = cmp.mapping.select_prev_item(),
           ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -79,6 +83,7 @@ return {
             -- Kind icons
             -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+            type
             vim_item.menu = ({
               nvim_lsp = "[LSP]",
               luasnip = "[Snippet]",
@@ -89,7 +94,7 @@ return {
           end,
         },
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
+          { name = "nvim_lsp", keyword_length=3 },
           { name = "luasnip" },
         }, {
           { name = "buffer" },

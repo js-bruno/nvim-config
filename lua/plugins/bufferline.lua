@@ -1,5 +1,5 @@
 return {
-  "akinsho/bufferline.nvim", 
+  "akinsho/bufferline.nvim",
   version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function ()
@@ -10,8 +10,9 @@ return {
       options = {
         mode = "buffers",
         style_preset  = {
-            bufferline.style_preset.no_italic,
-            bufferline.style_preset.no_bold
+            -- bufferline.style_preset.no_italic,
+            -- bufferline.style_preset.no_bold
+            bufferline.style_preset.minimal,
         },
         themable = true,
         indicator = {
