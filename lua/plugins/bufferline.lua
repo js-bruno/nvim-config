@@ -10,7 +10,7 @@ return {
       options = {
         mode = "buffers",
         style_preset  = {
-            -- bufferline.style_preset.no_italic,
+            bufferline.style_preset.no_italic,
             -- bufferline.style_preset.no_bold
             bufferline.style_preset.minimal,
         },
