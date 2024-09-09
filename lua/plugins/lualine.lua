@@ -1,16 +1,18 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+
 	config = function()
+    local custom_lualine_theme = require('user.lualine_theme')
 		require("lualine").setup({
 			options = {
-				theme = auto,
+				theme = custom_lualine_theme,
 				component_separators = "",
 				section_separators = { left = "", right = "" },
-				globalstatus = true,
-			},
+        globalstatus = true,
+      },
 			sections = {
-				lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+				lualine_a = { { "mode", separator = { left = "" }, right_padding = 1 } },
 				lualine_b = { "branch" },
 				lualine_c = {
 					"%=", --[[ add your center compoentnts here in place of this comment ]]

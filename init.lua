@@ -1,3 +1,5 @@
+require("user.keymaps")
+require("user.opt")
 -- Lazy startup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -42,23 +44,18 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 -- Rezise window with arrows
 
 vim.opt.rtp:prepend(lazypath)
-vim.opt.termguicolors = true
-vim.opt.relativenumber = true
-vim.opt.nu = true
-vim.opt.rnu = true
-vim.opt.showtabline = 1
-vim.opt.smartcase = true
-vim.opt.smartindent = true
-vim.opt.termguicolors = true
-vim.opt.wrap = false
-vim.opt.sidescrolloff = 8
-vim.opt.tabstop = 2
-vim.opt.swapfile = false
-vim.opt.cmdheight = 1
-vim.opt.mouse = ""
 vim.opt.cursorline = true
 vim.opt.undofile = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.timeoutlen = 1000
 
 require("lazy").setup("plugins")
+
+vim.cmd([[
+  try
+    colorscheme onedark
+  catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme default
+    set background=dark
+  endtry
+]])
