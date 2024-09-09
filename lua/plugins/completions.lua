@@ -9,6 +9,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
+
 			--   פּ ﯟ   some other good icons
 			local kind_icons = {
 				Text = "󰊄",

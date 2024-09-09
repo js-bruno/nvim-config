@@ -6,7 +6,7 @@ return {
 		require("ibl").setup({
 			debounce = 100,
 			indent = {
-        char = "┇",
+        char = "▏",
         smart_indent_cap = true,
         repeat_linebreak = true,
       },

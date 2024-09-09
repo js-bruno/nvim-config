@@ -10,6 +10,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          "pylsp",
           "pyright",
           "lua_ls",
           "tsserver",
@@ -60,8 +61,7 @@ return {
       })
       lspconfig.gopls.setup({
         capabilities = capabilities,
-        cmd = { 'gopls' },
-        on_attach = on_attach,
+        cmd = { 'gopls' }, on_attach = on_attach,
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -69,7 +69,7 @@ return {
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-      vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+      -- vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 
       vim.keymap.set("n", "<learder>t", vim.diagnostic.open_float)
       vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
