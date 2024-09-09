@@ -1,64 +1,52 @@
 return {
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			--vim.cmd.colorscheme "catppuccin"
-		end,
-	},
-	{
-		"uloco/bluloco.nvim",
-		name = "bluloco",
-		lazy = false,
-		priority = 1000,
-		dependencies = { "rktjmp/lush.nvim" },
-		config = function()
-			--vim.cmd.colorscheme("bluloco")
-		end,
-	},
-	{
-		"sainnhe/sonokai",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			-- vim.cmd.colorscheme("sonokai")
-		end,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		name = "kanagawa",
-		priority = 1000,
-		config = function()
-			--vim.cmd.colorscheme "kanagawa"
-		end,
-	},
-	{
-		"shaunsingh/nord.nvim",
-		name = "nord",
-		priority = 1000,
-		config = function()
-			--vim.cmd.colorscheme "nord"
-		end,
-	},
-{
-	{
-		"ribru17/bamboo.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-		-- 	require("bamboo").setup({
-		-- 		-- optional configuration here
-		-- 	})
-		-- 	require("bamboo").load()
-		end,
-	},
-  { "lunarvim/darkplus.nvim",
-		name = "darkplus",
-		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme "darkplus"
-		end,
-    },
-	},
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+  },
+  {
+    "sainnhe/sonokai",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    name = "kanagawa",
+    priority = 1000,
+  },
+  {
+    "shaunsingh/nord.nvim",
+    name = "nord",
+    priority = 1000, },
+  {
+    "lunarvim/darkplus.nvim",
+    name = "darkplus",
+    priority = 1000,
+  },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000,
+    config = function()
+      require("onedarkpro").setup({
+        colors = {
+          -- onedark = { bg = "#1e1e1e" },
+        },
+        styles = {          -- For example, to apply bold and italic, use "bold,italic"
+          types = "NONE",   -- Style that is applied to types
+          methods = "NONE", -- Style that is applied to methods
+          numbers = "NONE", -- Style that is applied to numbers
+          strings = "NONE", -- Style that is applied to strings
+          comments = "NONE", -- Style that is applied to comments
+          keywords = "italic", -- Style that is applied to keywords
+          constants = "bold", -- Style that is applied to constants
+          functions = "bold,italic", -- Style that is applied to functions
+          operators = "NONE", -- Style that is applied to operators
+          variables = "NONE", -- Style that is applied to variables
+          parameters = "italic", -- Style that is applied to parameters
+          conditionals = "NONE", -- Style that is applied to conditionals
+          virtual_text = "NONE", -- Style that is applied to virtual text
+        },
+      })
+    end,
+  },
 }

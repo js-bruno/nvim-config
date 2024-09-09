@@ -2,6 +2,7 @@ return {
   "akinsho/bufferline.nvim",
   version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
+  enabled = false,
   config = function ()
     vim.keymap.set("n", "<leader>be", ":BufferLinePick<CR>", {})
     -- :BufferLinePickClose<CR>
