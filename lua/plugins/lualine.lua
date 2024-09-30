@@ -12,7 +12,7 @@ return {
         globalstatus = true,
       },
 			sections = {
-				lualine_a = { { "mode", separator = { left = "" }, right_padding = 1 } },
+				lualine_a = { { "mode", separator = { left = "" }, padding = 1 } },
 				lualine_b = { "branch" },
 				lualine_c = {
 					"%=", --[[ add your center compoentnts here in place of this comment ]]
@@ -33,5 +33,10 @@ return {
 			},
 			extensions = {},
 		})
+
+    -- vim.cmd("set laststatus=0")
+    -- vim.cmd("hi! link StatusLine Normal")
+    -- vim.cmd("hi! link StatusLineNC Normal")
+    -- vim.cmd("set statusline=%{repeat('─',winwidth('.'))}")
 	end,
 }
