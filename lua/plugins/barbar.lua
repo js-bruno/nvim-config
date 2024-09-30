@@ -8,6 +8,7 @@ return {
   init = function()
     vim.g.barbar_auto_setup = false
     vim.keymap.set("n", "<leader>be", ":BufferPick<cr>", {})
+    vim.keymap.set("n", "<leader>br", ":BufferOrderByBufferNumber<cr>", {})
     vim.keymap.set("n", "<leader>bp", ":BufferPin<cr>", {})
     vim.keymap.set("n", "<leader>b$", ":BufferLast<cr>", {})
     vim.keymap.set("n", "<leader>b0", ":BufferGoto 1<cr>", {})

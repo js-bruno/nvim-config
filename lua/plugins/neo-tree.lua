@@ -1,7 +1,5 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  enable=false,
-  lazy = true,
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -9,6 +7,15 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set('n', '<leader>e', ':Neotree toggle source=filesystem reveal=true position=right<CR>', {})
+    require("neo-tree").setup({
+        source_selector = {
+            winbar = true,
+            statusline = true
+        },
+        filesystem = {
+          hijack_netrw_behavior = "disabled",
+        }
+    })
+    vim.keymap.set('n', '<C-b>', ':Neotree toggle source=filesystem reveal=true position=right<CR>', {})
   end
 }
