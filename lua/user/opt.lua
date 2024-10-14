@@ -1,5 +1,5 @@
 vim.opt.termguicolors = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = true 
 vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.showtabline = 1
@@ -26,3 +26,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set laststatus=0")
+vim.cmd("set nosmd")
+vim.cmd("set noru")
+
