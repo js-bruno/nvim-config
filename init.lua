@@ -53,7 +53,7 @@ require("lazy").setup("plugins")
 
 vim.cmd([[
   try
-    colorscheme onedark
+    colorscheme sonokai
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
     set background=dark

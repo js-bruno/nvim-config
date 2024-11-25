@@ -10,6 +10,11 @@ return {
     priority = 1000,
   },
   {
+    "sainnhe/sonokai",
+    name = "sonokai",
+    priority = 1000,
+  },
+  {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
     priority = 1000,

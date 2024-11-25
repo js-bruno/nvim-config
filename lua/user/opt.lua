@@ -26,7 +26,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set shiftwidth=2")
-vim.cmd("set laststatus=0")
+vim.cmd("set laststatus=1")
 vim.cmd("set nosmd")
 vim.cmd("set noru")
 
