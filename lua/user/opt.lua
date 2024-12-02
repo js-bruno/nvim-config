@@ -18,6 +18,7 @@ vim.opt.undofile = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.timeoutlen = 1000
 vim.opt.incsearch = true
+vim.opt.shiftround = true -- round indent
 
 
 vim.cmd("set expandtab ")
@@ -26,7 +27,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set shiftwidth=2")
-vim.cmd("set laststatus=3")
-vim.cmd("set nosmd")
-vim.cmd("set noru")
+vim.cmd("set laststatus=0")
+-- vim.cmd("set nosmd")
+vim.cmd("set noru") -- disable row/collumn from bottom
 
