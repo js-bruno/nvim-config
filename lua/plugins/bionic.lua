@@ -4,7 +4,7 @@ return {
     config = function(_)
       vim.cmd([[
         augroup BionicAutocmd
-          autocmd!
+         k autocmd!
           autocmd FileType * Bionic
         augroup END
       ]])
