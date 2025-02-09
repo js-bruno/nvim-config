@@ -5,7 +5,6 @@ vim.opt.rnu = true
 vim.opt.showtabline = 1
 vim.opt.smartcase = true vim.opt.smartindent = true
 vim.opt.autoindent = true
-vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.sidescrolloff = 8
 vim.opt.tabstop = 2

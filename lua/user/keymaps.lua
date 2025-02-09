@@ -19,17 +19,20 @@ vim.keymap.set("i", "jk", "<ESC>", {})
 vim.keymap.set("n", "<leader>w", ":w<cr>", {})
 vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
 
+-- vim.keymap.set("n", "<Tab>", ":bnext<CR>", {})
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", {})
-vim.keymap.set("n", "<leader><Tab>", ":tabNext<CR>", {})
-vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", {})
+vim.keymap.set("n", "<S-Tab>", ":tabNext<CR>", {})
+vim.keymap.set("n", "<leader><Tab>", ":tabnew<CR>", {})
+-- vim.keymap.set("n", "<S-Tab>", ":tabprevious<CR>", {})
+-- vim.keymap.set("n", "<Tab>", ":tabNext<CR>", {})
 
 vim.keymap.set("n", "<leader>v", ":vsplit<cr>", {})
 
 -- Better Navigation though buffers
--- vim.keymap.set("n", "<C-h>", "<C-w>h", {})
--- vim.keymap.set("n", "<C-j>", "<C-w>j", {})
--- vim.keymap.set("n", "<C-k>", "<C-w>k", {})
--- vim.keymap.set("n", "<C-l>", "<C-w>l", {})
+vim.keymap.set("n", "<C-h>", "<C-w>h", {})
+vim.keymap.set("n", "<C-j>", "<C-w>j", {})
+vim.keymap.set("n", "<C-k>", "<C-w>k", {})
+vim.keymap.set("n", "<C-l>", "<C-w>l", {})
 
 vim.keymap.set("n", "<C-h>", ":windcmd h<CR>", {})
 vim.keymap.set("n", "<C-j>", ":windcmd j<CR>", {})
