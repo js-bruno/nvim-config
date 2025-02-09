@@ -1,5 +1,6 @@
 return {
   "windwp/windline.nvim",
+  enabled = false,
   config = function ()
     require('wlsample.bubble2')
     require('windline').setup({

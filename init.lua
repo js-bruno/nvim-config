@@ -1,5 +1,6 @@
 require("user.keymaps")
 require("user.opt")
+
 -- Lazy startup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -14,7 +15,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup("plugins")
 
 vim.cmd([[
