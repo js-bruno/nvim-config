@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>w", ":w<cr>", {})
 vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
 
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", {})
-vim.keymap.set("n", "<leader>Tab", ":tabNext<CR>", {})
+vim.keymap.set("n", "<leader><Tab>", ":tabNext<CR>", {})
 vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", {})
 
 vim.keymap.set("n", "<leader>v", ":vsplit<cr>", {})

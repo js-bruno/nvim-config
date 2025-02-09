@@ -3,8 +3,7 @@ vim.opt.relativenumber = true
 vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.showtabline = 1
-vim.opt.smartcase = true
-vim.opt.smartindent = true
+vim.opt.smartcase = true vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false

@@ -8,10 +8,10 @@
 - [ ] Make terminal enable italic fonts in nvim editor colorscheme
 - [ ] Fix tmux not loading italic fonts on Neovim
 - [ ] Create a way to telescope (space + e) to delete selected buffer
-- [ ] Use tab to alternate through marked pages and let tab navigation go to telescope
+- [ ] Use tab to alternate through marked pages and let tab navigation go to Arrow
+- [ ] Create a shortcuts to navigate throw git changes in the file
 - [X] Adjust autosurround ()
-- [ ] Implement tags autosurround [ ] Improve cmp visual and usage [ ] Enhance LSP integration with Go and Python [ ] Check in Typecraft channel for better dotfile storage [ ] Adjust a way to load dotfiles better
-- [ ] Adjust telescope size
+
 - [ ] Implement undo tree>
 
 ## features to copy from astronvim e.e
