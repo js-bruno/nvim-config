@@ -58,6 +58,9 @@ return {
       lspconfig.dockerls.setup({
         capabilities = capabilities,
       })
+      lspconfig.html.setup({
+        capabilities = capabilities,
+      })
       lspconfig.gopls.setup({
         capabilities = capabilities,
         cmd = { 'gopls' }, on_attach = on_attach,
