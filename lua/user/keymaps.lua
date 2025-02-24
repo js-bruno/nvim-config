@@ -15,7 +15,6 @@ vim.keymap.set("x", "<leader>p", "\"_dP", {})
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("i", "jk", "<ESC>", {})
-
 vim.keymap.set("n", "<leader>w", ":w<cr>", {})
 vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
 
@@ -44,3 +43,9 @@ vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", {})
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", {})
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", {})
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
+
+          -- Create a keymap for
+-- vim.keymap.set("n", "<learder>t", vim.diagnostic.open_float)
+-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+-- vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+-- vim.keymap.set("n", "<leader>o", vim.diagnostic.setloclist)

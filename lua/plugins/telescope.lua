@@ -31,12 +31,12 @@ return {
 				"<cmd>lua require'telescope.builtin'.git_branches(require('telescope.themes').get_cursor({ initial_mode='insert', previewer = false}))<cr>",
 				{}
 			)
-			vim.keymap.set(
-				"n",
-				"<leader>gr",
-				"<cmd>lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_dropdown({ initial_mode='normal', previewer = true}))<cr>",
-				{}
-			)
+			-- vim.keymap.set(
+			-- 	"n",
+			-- 	"<leader>gr",
+			-- 	"<cmd>lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_dropdown({ initial_mode='normal', previewer = true}))<cr>",
+			-- 	{}
+			-- )
 			-- vim.keymap.set("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", {})
 			-- vim.keymap.set("n", "<leader>pf", function () builtin.grep_string({ search = vim.fn.input("Grep > ")}) end, {})
 

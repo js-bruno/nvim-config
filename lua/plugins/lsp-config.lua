@@ -1,83 +1,50 @@
 return {
   {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "pylsp",
-          "pyright",
-          "lua_ls",
-          "gopls",
-          "docker_compose_language_service",
-          "dockerls",
-        },
-      })
-    end,
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    config = function()
-      require("mason-tool-installer").setup({
-        ensure_installed = {
-          "pyright",
-          "black",
-          "flake8",
-          "stylua",
-        },
-      })
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
-
-      lspconfig.pylsp.setup({
-        capabilities = capabilities,
-        plugins = {
-          flake8 = { enabled = true },
-          pycodestyle = { enabled = false },
-          pyflakes = { enabled = false },
-          pylint = { enabled = false },
-          mccabe = { enabled = false },
+    dependencies = {
+      {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+          library = {
+            -- See the configuration section for more details
+            -- Load luvit types when the `vim.uv` word is found
+            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+          },
         },
-      })
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.docker_compose_language_service.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.dockerls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-        cmd = { 'gopls' }, on_attach = on_attach,
-      })
+      },
+    },
+    config = function()
+      require("lspconfig").lua_ls.setup{}
+      require("lspconfig").pyright.setup{}
+      require("lspconfig").gopls.setup{}
 
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<c-k>", vim.lsp.buf.signature_help, {})
-      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {desc="Go To Declaration"})
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {desc="Go to Definition"})
-      vim.keymap.set("n", "gI", vim.lsp.buf.implementation, {desc="Go to Implementation"})
-      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-      -- vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function (args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if not client then return end
 
-      vim.keymap.set("n", "<learder>t", vim.diagnostic.open_float)
-      vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-      vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-      vim.keymap.set("n", "<leader>o", vim.diagnostic.setloclist)
-    end,
+          -- lsp keymaps
+          vim.keymap.set("n", "K", vim.lsp.buf.signature_help, {})
+          -- vim.keymap.set("n",, vim.lsp.buf.hover, {})
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {desc="Go To Declaration"})
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, {desc="Go to Definition"})
+          vim.keymap.set("n", "gI", vim.lsp.buf.implementation, {desc="Go to Implementation"})
+          -- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+          vim.keymap.set("n", "ge", vim.lsp.buf.references, {})
+          vim.keymap.set("n", "gr", vim.lsp.buf.rename, {})
+
+          -- Format file when saves the documetn
+          -- if client.supports_method('textDocument/formatting') then
+          --   vim.api.nvim_create_autocmd('BufWritePre', {
+          --     buffer = args.buf,
+          --     callback = function ()
+          --       vim.lsp.buf.format{bufnr = args.buf, id = client.id}
+          --     end
+          --   })
+          -- end
+        end
+      })
+   end,
   },
 }
