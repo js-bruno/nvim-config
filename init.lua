@@ -19,7 +19,7 @@ require("lazy").setup("plugins")
 
 vim.cmd([[
   try
-    colorscheme onedark
+    colorscheme darkplus
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
     set background=dark

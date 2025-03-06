@@ -16,8 +16,19 @@ return {
     },
     config = function()
       require("lspconfig").lua_ls.setup{}
-      require("lspconfig").pyright.setup{}
       require("lspconfig").gopls.setup{}
+      require'lspconfig'.pylsp.setup{
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                ignore = {'W391'},
+                maxLineLength = 100
+              }
+            }
+          }
+        }
+      }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function (args)
@@ -30,7 +41,7 @@ return {
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {desc="Go To Declaration"})
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, {desc="Go to Definition"})
           vim.keymap.set("n", "gI", vim.lsp.buf.implementation, {desc="Go to Implementation"})
-          -- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+          vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
           vim.keymap.set("n", "ge", vim.lsp.buf.references, {})
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, {})
 
