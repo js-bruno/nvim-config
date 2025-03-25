@@ -1,44 +1,20 @@
+local keymaps = require "user.keymaps"
 return {
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			vim.keymap.set(
-				"n",
-				"<leader>f",
-				"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, find_command = {'rg', '--files', '--hidden', '-g', '!.git' } }))<cr>",
-				{}
-			)
-			-- vim.keymap.set("n", "<leader>e", ":Telescope buffers initial_mode=normal<cr>", {})
-			vim.keymap.set(
-				"n",
-				"<leader>e",
-				"<cmd>lua require'telescope.builtin'.buffers({ initial_mode='normal' })<cr>",
-				{}
-			)
-			vim.keymap.set("n", "<c-t>", ":Telescope live_grep<cr>", {})
-			vim.keymap.set(
-				"n",
-				"<leader>kj",
-				"<cmd>lua require'telescope.builtin'.git_status({ initial_mode='normal' })<cr>",
-				{}
-			)
+      keymaps.declareTelescopeKeymaps()
 
-			vim.keymap.set(
-				"n",
-				"<leader>kl",
-				"<cmd>lua require'telescope.builtin'.git_branches(require('telescope.themes').get_cursor({ initial_mode='insert', previewer = false}))<cr>",
-				{}
-			)
 			-- vim.keymap.set(
-			-- 	"n",
+			-- 	mode,
 			-- 	"<leader>gr",
 			-- 	"<cmd>lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_dropdown({ initial_mode='normal', previewer = true}))<cr>",
 			-- 	{}
 			-- )
-			-- vim.keymap.set("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", {})
-			-- vim.keymap.set("n", "<leader>pf", function () builtin.grep_string({ search = vim.fn.input("Grep > ")}) end, {})
+			-- vim.keymap.set(mode, "<leader>f", "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", {})
+			-- vim.keymap.set(mode, "<leader>pf", function () builtin.grep_string({ search = vim.fn.input("Grep > ")}) end, {})
 
 			require("telescope").setup({
 				pickers = {
@@ -47,12 +23,11 @@ return {
 					},
 					buffers = {
 						layout_config = {
-							horizontal = {
+							center = {
 								height = 0.6,
 								preview_cutoff = 120,
 								preview_width = 0.4,
-								prompt_position = "top",
-								mirror = true,
+								mirror = false,
 								width = 0.9,
 							},
 						},
