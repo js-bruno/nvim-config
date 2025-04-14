@@ -1,40 +1,21 @@
 return {
   'saghen/blink.cmp',
   -- dependencies = 'rafamadriz/friendly-snippets',
-  dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
-
-
+  dependencies = {
+    'L3MON4D3/LuaSnip',
+    "rafamadriz/friendly-snippets",
+  },
   signature = { enabled = true },
   version = '*',
   ---
   ---@module 'blink.cmp'cmp
   ---@type blink.cmp.Config
-  cmdline = {
-    enabled = true,
-  },
   opts = {
     completion = {
       ghost_text = {enabled = true },
       menu = {
         auto_show = true
       },
-      --   draw = {
-      --     components = {
-      --       kind_icon = {
-      --         ellipsis = false,
-      --         text = function(ctx)
-      --           local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
-      --           return kind_icon
-      --         end,
-      --         -- Optionally, you may also use the highlights from mini.icons
-      --         highlight = function(ctx)
-      --           local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-      --           return hl
-      --         end,
-      --       }
-      --     }
-      --   }
-      -- }
     },
     keymap = {
       preset = 'super-tab',
@@ -52,7 +33,6 @@ return {
       -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = 'mono'
     },
-
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
       providers = {

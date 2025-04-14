@@ -31,6 +31,10 @@ return {
       require("lspconfig").lua_ls.setup {}
       require("lspconfig").gopls.setup {}
       require 'lspconfig'.pyright.setup {}
+      require'lspconfig'.volar.setup{
+        filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+      }
+      require'lspconfig'.ts_ls.setup{}
       -- require 'lspconfig'.pyrigh.setup {
       -- require 'lspconfig'.pylsp.setup {
       --   settings = {

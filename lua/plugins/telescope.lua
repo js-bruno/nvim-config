@@ -6,17 +6,13 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
       keymaps.declareTelescopeKeymaps()
-
-			-- vim.keymap.set(
-			-- 	mode,
-			-- 	"<leader>gr",
-			-- 	"<cmd>lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_dropdown({ initial_mode='normal', previewer = true}))<cr>",
-			-- 	{}
-			-- )
-			-- vim.keymap.set(mode, "<leader>f", "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", {})
-			-- vim.keymap.set(mode, "<leader>pf", function () builtin.grep_string({ search = vim.fn.input("Grep > ")}) end, {})
-
-			require("telescope").setup({
+      require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = {
+            ".git/.*",
+            "node_modules/.*",
+          }
+        },
 				pickers = {
 					lsp_references = {
 						show_line = false,

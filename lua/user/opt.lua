@@ -3,7 +3,9 @@ vim.opt.relativenumber = true
 vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.showtabline = 1
-vim.opt.smartcase = true vim.opt.smartindent = true
+vim.opt.smartcase = true
+vim.opt.smartindent = true
+vim.opt.signcolumn = "yes"
 vim.opt.autoindent = true
 vim.opt.wrap = false
 vim.opt.sidescrolloff = 8
@@ -23,7 +25,6 @@ vim.cmd("set tabstop =2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard=unnamedplus")
-vim.cmd("set shiftwidth=2")
 vim.cmd("set laststatus=3")
 vim.cmd("set nosmd")
 vim.cmd("set noru")

@@ -4,6 +4,9 @@ vim.g.mapleader = " "
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {})
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {})
 
+vim.keymap.set("n", "<Leader>++", "<C-w>|")
+vim.keymap.set("n", "<Leader>==", "<C-w>=")
+
 vim.keymap.set("n", "J", "mzJ`z", {})
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
@@ -60,12 +63,12 @@ function keymaps.declareTelescopeKeymaps()
   )
   -- vim.keymap.set(mode, "<leader>e", ":Telescope buffers initial_mode=normal<cr>", {})
 
-  vim.keymap.set(
-    mode,
-    "<leader>e",
-    "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ initial_mode='normal', previewer = false, find_command = {'rg', '--files', '--hidden', '-g', '!.git' } }))<cr>",
-    { desc = "Open Find_Files telescope with a simple dropdown searcher" }
-  )
+  -- vim.keymap.set(
+  --   mode,
+  --   "<leader>e",
+  --   "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ initial_mode='normal', previewer = false, find_command = {'rg', '--files', '--hidden', '-g', '!.git' } }))<cr>",
+  --   { desc = "Open Find_Files telescope with a simple dropdown searcher" }
+  -- )
   vim.keymap.set(mode, "<c-t>", ":Telescope live_grep<cr>", {})
   vim.keymap.set(
     mode,
@@ -85,6 +88,7 @@ end
 function keymaps.declareLPSKeymaps()
   vim.keymap.set("n", "K", vim.lsp.buf.signature_help, {})
   -- vim.keymap.set("n",, vim.lsp.buf.hover, {})
+  -- vim.keymap.set("n", "gb", "<C-^>")
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go To Declaration" })
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to Implementation" })

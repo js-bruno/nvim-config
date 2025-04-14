@@ -63,7 +63,7 @@ return {
       end
 
       vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
-      vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
+      -- vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
 
       -- Eval var under cursor
       vim.keymap.set("n", "<space>?", function()
