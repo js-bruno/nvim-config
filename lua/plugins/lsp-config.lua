@@ -30,7 +30,8 @@ return {
       require("lspconfig").html.setup { capabilities = capabilities, init_options = init_options }
       require("lspconfig").lua_ls.setup {}
       require("lspconfig").gopls.setup {}
-      require 'lspconfig'.pyright.setup {}
+      -- require 'lspconfig'.pyright.setup {}
+      vim.lsp.enable('basedpyright')
       require'lspconfig'.volar.setup{
         filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
       }
