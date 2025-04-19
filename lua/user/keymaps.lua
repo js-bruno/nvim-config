@@ -47,6 +47,8 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 -- vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 -- vim.keymap.set("n", "<leader>o", vim.diagnostic.setloclist)
 
+vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
 local keymaps = {}
 function keymaps.declareTelescopeKeymaps()

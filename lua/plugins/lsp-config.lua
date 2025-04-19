@@ -30,23 +30,23 @@ return {
       require("lspconfig").html.setup { capabilities = capabilities, init_options = init_options }
       require("lspconfig").lua_ls.setup {}
       require("lspconfig").gopls.setup {}
-      require 'lspconfig'.pyright.setup {}
+      -- require 'lspconfig'.pyright.setup {}
       -- require 'lspconfig'.pyrigh.setup {
-      -- require 'lspconfig'.pylsp.setup {
-      --   settings = {
-      --     pylsp = {
-      --       plugins = {
-      --         mypy = {
-      --           enabled= false,
-      --         },
-      --         pycodestyle = {
-      --           ignore = { 'W391' },
-      --           maxLineLength = 100
-      --         }
-      --       }
-      --     }
-      --   }
-      -- }
+      require 'lspconfig'.pylsp.setup {
+        settings = {
+          pylsp = {
+            plugins = {
+              mypy = {
+                enabled= false,
+              },
+              pycodestyle = {
+                ignore = { 'W391' },
+                maxLineLength = 100
+              }
+            }
+          }
+        }
+      }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)

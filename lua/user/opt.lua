@@ -12,6 +12,7 @@ vim.opt.swapfile = false
 vim.opt.cmdheight = 1
 vim.opt.mouse = a
 vim.opt.cursorline = true
+vim.opt.lazyredraw = true
 vim.opt.undofile = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.timeoutlen = 1000

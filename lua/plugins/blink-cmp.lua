@@ -5,7 +5,7 @@ return {
 
 
   signature = { enabled = true },
-  version = '*',
+  version = 'v1.1.1',
   ---
   ---@module 'blink.cmp'cmp
   ---@type blink.cmp.Config
@@ -13,8 +13,7 @@ return {
     enabled = true,
   },
   opts = {
-    completion = {
-      ghost_text = {enabled = true },
+    completion = { ghost_text = {enabled = true },
       menu = {
         auto_show = true
       },
