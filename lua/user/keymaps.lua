@@ -44,13 +44,6 @@ vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", {})
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", {})
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 
-          -- Create a keymap for
--- vim.keymap.set("n", "<learder>t", vim.diagnostic.open_float)
--- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
--- vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
--- vim.keymap.set("n", "<leader>o", vim.diagnostic.setloclist)
-
-
 local keymaps = {}
 function keymaps.declareTelescopeKeymaps()
   local mode = "n"
