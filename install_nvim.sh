@@ -14,7 +14,7 @@ source "$HOME/.bashrc"
 
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
-chmod +X nvim-linux-x86_64.appimage
+chmod +x nvim-linux-x86_64.appimage
 
 mkdir -p "$HOME/bin/"
 
