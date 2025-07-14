@@ -18,6 +18,6 @@ chmod +X nvim-linux-x86_64.appimage
 
 mkdir -p "$HOME/bin/"
 
-ln -s ./nvim-linux-x86_64.appimage "$HOME/bin/nvim"
+ln -s "$PWD/nvim-linux-x86_64.appimage" "$HOME/bin/nvim"
 
 # touch ~/bin/nvim | echo -e '/opt/nvim/nvim-linux-x86_64.appimage' >> ~/bin/nvim
