@@ -4,7 +4,7 @@ return {
   lazy = false,
   tag = "v7.0.0",
 	config = function()
-		vim.keymap.set("n", "<leader>nn", ":Neorg keybind norg core.dirman.new.note<cr>", {})
+		-- vim.keymap.set("n", "<leader>nn", ":Neorg keybind norg core.dirman.new.note<cr>", {})
 		vim.keymap.set("n", "<leader>ni", ":Neorg index<cr>", {})
 
 		require("neorg").setup({

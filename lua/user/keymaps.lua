@@ -1,12 +1,22 @@
 vim.g.mapleader = " "
 
+-- GOLANG REMAPS
+-- vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
+vim.keymap.set("n", "<leader>ss", ":GoFillStruct<CR>", {})
+vim.keymap.set("n", "<leader>sd", ":GoIfErr<CR>", {})
+-- vim.keymap.set("n", "<leader>ii", ":GoDebug<CR>", {})
+-- vim.keymap.set("n", "<leader>ip", ":GoDbgContinue<CR>", {})
+
+vim.keymap.set("n", "<leader>t", ":TestNearest<cr>")
+vim.keymap.set("n", "<leader>T", ":TestSuite<cr>")
+-- vim.keymap.set("n", "<leader>a", ":TestLast<cr>")
+vim.keymap.set("n", "<leader>g", ":TestVisit<cr>")
 -- REMAPS
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {})
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {})
 
 vim.keymap.set("n", "<Leader>++", "<C-w>|")
 vim.keymap.set("n", "<Leader>==", "<C-w>=")
-
 vim.keymap.set("n", "J", "mzJ`z", {})
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
@@ -51,6 +61,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 -- vim.keymap.set("n", "<leader>o", vim.diagnostic.setloclist)
 
 
+vim.keymap.set("n", "<leader>,", ":GrugFar<cr>", {})
 local keymaps = {}
 function keymaps.declareTelescopeKeymaps()
   local mode = "n"
@@ -89,6 +100,7 @@ function keymaps.declareLPSKeymaps()
   vim.keymap.set("n", "K", vim.lsp.buf.signature_help, {})
   -- vim.keymap.set("n",, vim.lsp.buf.hover, {})
   -- vim.keymap.set("n", "gb", "<C-^>")
+  vim.keymap.set("n", "<leader>lp",  "<cmd>LspStop<cr>", { desc = "Go To Declaration" })
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go To Declaration" })
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
