@@ -7,10 +7,6 @@ return {
     "nvim-tree/nvim-web-devicons", -- optional dependency
   },
   opts = {
-    -- configurations go here
-  },
-  config = function()
-    require("barbecue").setup({
       theme = {
         -- this highlight is used to override other highlights
         -- you can take advantage of its `bg` and set a background throughout your winbar
@@ -55,6 +51,5 @@ return {
         context_operator = { fg = "#ac8fe4" },
         context_type_parameter = { fg = "#ac8fe4" },
       },
-    })
-  end,
+  }
 }

@@ -1,83 +1,68 @@
+local keymaps = require 'user.keymaps'
 return {
   {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "pylsp",
-          "pyright",
-          "lua_ls",
-          "gopls",
-          "docker_compose_language_service",
-          "dockerls",
-        },
-      })
-    end,
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    config = function()
-      require("mason-tool-installer").setup({
-        ensure_installed = {
-          "pyright",
-          "black",
-          "flake8",
-          "stylua",
-        },
-      })
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
-
-      lspconfig.pylsp.setup({
-        capabilities = capabilities,
-        plugins = {
-          flake8 = { enabled = true },
-          pycodestyle = { enabled = false },
-          pyflakes = { enabled = false },
-          pylint = { enabled = false },
-          mccabe = { enabled = false },
+    dependencies = {
+      {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+          library = {
+            -- See the configuration section for more details
+            -- Load luvit types when the `vim.uv` word is found
+            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+          },
         },
-      })
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.docker_compose_language_service.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.dockerls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-        cmd = { 'gopls' }, on_attach = on_attach,
-      })
+      },
+    },
+    config = function()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<c-k>", vim.lsp.buf.signature_help, {})
-      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {desc="Go To Declaration"})
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {desc="Go to Definition"})
-      vim.keymap.set("n", "gI", vim.lsp.buf.implementation, {desc="Go to Implementation"})
-      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-      -- vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+      local init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+          css = true,
+          javascript = true
+        },
+        provideFormatter = true
+      }
+      require("lspconfig").html.setup { capabilities = capabilities, init_options = init_options }
+      require("lspconfig").lua_ls.setup {}
+      require("lspconfig").gopls.setup {}
+      -- vim.lsp.enable('gopls')
+      vim.lsp.enable('nixd')
+      -- require 'lspconfig'.pyright.setup {}
+      -- vim.lsp.enable('basedpyright')
+      require'lspconfig'.volar.setup{
+        filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+      }
+      require'lspconfig'.ts_ls.setup{}
+      -- require 'lspconfig'.pyrigh.setup {
+      require 'lspconfig'.pylsp.setup {
+        settings = {
+          pylsp = {
+            plugins = {
+              mypy = {
+                enabled= false,
+              },
+              pycodestyle = {
+                ignore = { 'W391' },
+                maxLineLength = 100
+              }
+            }
+          }
+        }
+      }
 
-      vim.keymap.set("n", "<learder>t", vim.diagnostic.open_float)
-      vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-      vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-      vim.keymap.set("n", "<leader>o", vim.diagnostic.setloclist)
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if not client then return end
+
+          keymaps.declareLPSKeymaps()
+        end
+      })
     end,
   },
 }
