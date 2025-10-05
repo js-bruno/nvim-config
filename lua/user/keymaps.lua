@@ -1,4 +1,27 @@
 vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>j", ":Yeet<cr>", {})
+vim.keymap.set("n", "<A-1>", "1gt", {})
+vim.keymap.set("n", "<A-2>", "2gt", {})
+vim.keymap.set("n", "<A-3>", "3gt", {})
+vim.keymap.set("n", "<A-4>", "4gt", {})
+vim.keymap.set("n", "<A-5>", "5gt", {})
+vim.keymap.set("n", "<A-6>", "6gt", {})
+vim.keymap.set("n", "<A-7>", "7gt", {})
+
+-- scissors SNIPETS
+vim.keymap.set(
+	"n",
+	"<leader>se",
+	function() require("scissors").editSnippet() end,
+	{ desc = "Snippet: Edit" }
+)
+-- when used in visual mode, prefills the selection as snippet body
+vim.keymap.set(
+	{ "n", "x" },
+	"<leader>sa",
+	function() require("scissors").addNewSnippet() end,
+	{ desc = "Snippet: Add" }
+)
 
 -- GOLANG REMAPS
 -- vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
@@ -102,7 +125,11 @@ function keymaps.declareLPSKeymaps()
   -- vim.keymap.set("n", "gb", "<C-^>")
   vim.keymap.set("n", "<leader>lp",  "<cmd>LspStop<cr>", { desc = "Go To Declaration" })
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go To Declaration" })
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
+  -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
+  vim.keymap.set("n", "gd", function ()
+    vim.cmd("tab split")
+    vim.lsp.buf.definition()
+  end, { desc = "Go to Definition" })
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
   vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
   vim.keymap.set("n", "ge", vim.lsp.buf.references, {})
@@ -112,8 +139,8 @@ function keymaps.declareLPSKeymaps()
 
 
   vim.keymap.set("n", "<leader>o", vim.diagnostic.setloclist)
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev) -- <- UPDATE THIS
+  vim.keymap.set("n", "]d", vim.diagnostic.goto_next) -- <- UPDATE THIS
   -- Format file when saves the documetn
   -- if client.supports_method('textDocument/formatting') then
   --   vim.api.nvim_create_autocmd('BufWritePre', {

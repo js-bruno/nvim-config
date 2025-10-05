@@ -28,4 +28,3 @@ vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set laststatus=3")
 vim.cmd("set nosmd")
 vim.cmd("set noru")
-

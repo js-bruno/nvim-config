@@ -1,4 +1,9 @@
 return {
+  {
+    "tiagovla/tokyodark.nvim",
+		lazy = false,
+		priority = 1000,
+  },
 	{
 		"sainnhe/sonokai",
 		lazy = false,

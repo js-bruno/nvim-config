@@ -45,6 +45,11 @@ return {
           module = "blink.cmp.sources.lsp",
           score_offset = 950
         },
+        snippets = {
+          opts = {
+            search_paths = { "~/.config/nvim/lua/snippets/" },
+          },
+        }
         -- buffer = {
         --   fallback_for = {}, -- disable being fallback for LSP
         --   max_items = 4,

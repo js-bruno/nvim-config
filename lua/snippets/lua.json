@@ -1,0 +1,1 @@
+{"vim keymap() + keymap":{"body":["vim.keymap.set(","\t{ \"n\", \"x\" },","\t\"<leader>sa\",","\tfunction() require(\"scissors\").addNewSnippet() end,","\t{ desc = \"Snippet: Add\" }",")"],"prefix":["vim keymap()","keymap"]}}

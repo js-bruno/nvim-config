@@ -30,7 +30,8 @@ return {
       require("lspconfig").html.setup { capabilities = capabilities, init_options = init_options }
       require("lspconfig").lua_ls.setup {}
       require("lspconfig").gopls.setup {}
-      vim.lsp.enable('gopls')
+      -- vim.lsp.enable('gopls')
+      vim.lsp.enable('nixd')
       -- require 'lspconfig'.pyright.setup {}
       -- vim.lsp.enable('basedpyright')
       require'lspconfig'.volar.setup{
