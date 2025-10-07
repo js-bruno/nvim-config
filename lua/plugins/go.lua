@@ -10,7 +10,7 @@ return {
     -- lsp_keymaps = false,
     -- other options
   },
-  config = function(lp, opts)
+  config = function(_, opts)
     require("go").setup(opts)
     local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
     vim.api.nvim_create_autocmd("BufWritePre", {

@@ -40,7 +40,6 @@ return {
 					list = true,
 					listchars = "precedes:…,extends:…",
 					-- Increase this for more context when text scrolls off the window
-					sidescrolloff = 0,
 				},
 
 				-- Set to `false` to disable

@@ -8,7 +8,8 @@ vim.opt.smartindent = true
 vim.opt.signcolumn = "yes"
 vim.opt.autoindent = true
 vim.opt.wrap = false
-vim.opt.sidescrolloff = 8
+vim.opt.sidescrolloff = 12
+vim.opt.scrolloff = 3
 vim.opt.tabstop = 2
 vim.opt.swapfile = false
 vim.opt.cmdheight = 1
@@ -28,3 +29,5 @@ vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set laststatus=3")
 vim.cmd("set nosmd")
 vim.cmd("set noru")
+vim.cmd("set splitbelow")
+vim.cmd("set splitright")
